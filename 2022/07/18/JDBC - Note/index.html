@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/java/img/fluid.png">
+  <link rel="icon" href="/java/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,18 +19,18 @@
     <meta name="description" content="JDBCJava DataBase Connectivity（Java 语言连接数据库） 本质是 SUN 公司制定的一套接口 java.sql.*  Before Start从官网下载对应的驱动 jar 包，然后配置到环境变量 classpath 中 将 jar 包存在自定的 tool 文件，其中 ;. 代表当前目录所有文件 1.;C:\vv\code\Java\Tool\mysql-connec">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JDBC - Note">
-<meta property="og:url" content="https://wataaaame.github.io/2022/07/18/JDBC%20-%20Note/index.html">
+<meta property="og:url" content="https://wataaaame.github.io/java/2022/07/18/JDBC%20-%20Note/index.html">
 <meta property="og:site_name" content="Wataame&#39;s Java Blog">
 <meta property="og:description" content="JDBCJava DataBase Connectivity（Java 语言连接数据库） 本质是 SUN 公司制定的一套接口 java.sql.*  Before Start从官网下载对应的驱动 jar 包，然后配置到环境变量 classpath 中 将 jar 包存在自定的 tool 文件，其中 ;. 代表当前目录所有文件 1.;C:\vv\code\Java\Tool\mysql-connec">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wataaaame.github.io/images/image-jdbc/note-01-JDBC%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86.PNG">
-<meta property="og:image" content="https://wataaaame.github.io/images/image-jdbc/note-02-%E9%81%8D%E5%8E%86%E7%BB%93%E6%9E%9C%E9%9B%86%E5%8E%9F%E7%90%86.PNG">
+<meta property="og:image" content="https://wataaaame.github.io/java/images/image-jdbc/note-01-JDBC%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86.PNG">
+<meta property="og:image" content="https://wataaaame.github.io/java/images/image-jdbc/note-02-%E9%81%8D%E5%8E%86%E7%BB%93%E6%9E%9C%E9%9B%86%E5%8E%9F%E7%90%86.PNG">
 <meta property="article:published_time" content="2022-07-18T03:16:59.000Z">
-<meta property="article:modified_time" content="2022-07-20T07:05:04.644Z">
+<meta property="article:modified_time" content="2024-11-15T02:05:03.863Z">
 <meta property="article:author" content="Aaron Tang">
 <meta property="article:tag" content="Note">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wataaaame.github.io/images/image-jdbc/note-01-JDBC%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86.PNG">
+<meta name="twitter:image" content="https://wataaaame.github.io/java/images/image-jdbc/note-01-JDBC%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86.PNG">
   
   
   
@@ -58,12 +58,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/java/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/java/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/java/css/highlight-dark.css" />
   
 
 
@@ -72,15 +72,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wataaaame.github.io","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"wataaaame.github.io","root":"/java/","version":"1.9.0","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/java/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/java/js/utils.js" ></script>
+  <script  src="/java/js/color-schema.js" ></script>
 
   
 <meta name="generator" content="Hexo 6.2.0"></head>
@@ -95,7 +95,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/java/">
       <strong>Wataame</strong>
     </a>
 
@@ -114,7 +114,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/java/">
                 <i class="iconfont icon-home-fill"></i>
                 Home
               </a>
@@ -126,7 +126,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/java/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 Archives
               </a>
@@ -138,7 +138,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/java/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 Categories
               </a>
@@ -150,7 +150,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/java/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 Tags
               </a>
@@ -162,7 +162,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/java/about/">
                 <i class="iconfont icon-user-fill"></i>
                 About
               </a>
@@ -191,7 +191,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/java/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -276,7 +276,7 @@
               <h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><p>Java DataBase Connectivity（Java 语言连接数据库）</p>
 <p>本质是 SUN 公司制定的一套接口</p>
 <p><code>java.sql.*</code></p>
-<p><img src="/images/image-jdbc/note-01-JDBC%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86.PNG" srcset="/img/loading.gif" lazyload alt="JDBC底层原理"></p>
+<p><img src="/java/images/image-jdbc/note-01-JDBC%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86.PNG" srcset="/java/img/loading.gif" lazyload alt="JDBC底层原理"></p>
 <h2 id="Before-Start"><a href="#Before-Start" class="headerlink" title="Before Start"></a>Before Start</h2><p>从官网下载对应的驱动 jar 包，然后配置到环境变量 classpath 中</p>
 <p>将 jar 包存在自定的 tool 文件，其中 <code>;.</code> 代表当前目录所有文件</p>
 <figure class="highlight moonscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs moonscript">.;<span class="hljs-name">C</span>:\vv\code\Java\Tool\mysql-connector-java<span class="hljs-number">-5.1</span><span class="hljs-number">.23</span>.jar<br></code></pre></td></tr></table></figure>
@@ -304,7 +304,7 @@
 <p>处理查询结果集：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> io.wataaaame.github.jdbc;<br><br><span class="hljs-keyword">import</span> java.sql.*;<br><span class="hljs-keyword">import</span> java.util.ResourceBundle;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JDBCTest05</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">ResourceBundle</span> <span class="hljs-variable">bundle</span> <span class="hljs-operator">=</span> ResourceBundle.getBundle(<span class="hljs-string">&quot;jdbc&quot;</span>);<br>        <span class="hljs-type">String</span> <span class="hljs-variable">driver</span> <span class="hljs-operator">=</span> bundle.getString(<span class="hljs-string">&quot;driver&quot;</span>);<br>        <span class="hljs-type">String</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> bundle.getString(<span class="hljs-string">&quot;url&quot;</span>);<br>        <span class="hljs-type">String</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> bundle.getString(<span class="hljs-string">&quot;user&quot;</span>);<br>        <span class="hljs-type">String</span> <span class="hljs-variable">password</span> <span class="hljs-operator">=</span> bundle.getString(<span class="hljs-string">&quot;password&quot;</span>);<br><br>        <span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-type">Statement</span> <span class="hljs-variable">stmt</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-type">ResultSet</span> <span class="hljs-variable">rs</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br><br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-comment">// 1. 注册驱动</span><br>            Class.forName(driver);<br><br>            <span class="hljs-comment">// 2. 获取连接</span><br>            conn = DriverManager.getConnection(url, user, password);<br><br>            <span class="hljs-comment">// 3. 获取数据库操作对象</span><br>            stmt = conn.createStatement();<br><br>            <span class="hljs-comment">// 4. 执行 SQL 语句</span><br>            <span class="hljs-type">String</span> <span class="hljs-variable">sql</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;select empno, ename, sal from emp&quot;</span>;<br>            <span class="hljs-comment">// 通过 executeQuery()，专门执行 DQL 语句，返回 ResultSet</span><br>            rs = stmt.executeQuery(sql);<br><br>            <span class="hljs-comment">// 5. 处理查询结果集</span><br>            <span class="hljs-comment">// rs.next() 光标后移一位，若为真，则光标指向行有数据</span><br>            <span class="hljs-keyword">while</span> (rs.next()) &#123;<br>                <span class="hljs-comment">// 取数据</span><br>                <span class="hljs-comment">// getString()：不管原类型，都以 String 类型取出</span><br>                <span class="hljs-comment">// 若使用 getInt() 等特定类型，可直接进行数据运算（需底层类型相同）</span><br>                <span class="hljs-comment">// JDBC 中，所有的下标都从 1 开始，代表第一列</span><br><span class="hljs-comment">//                System.out.println(rs.getString(1) + &quot;, &quot; +</span><br><span class="hljs-comment">//                        rs.getString(2) + &quot;, &quot; +</span><br><span class="hljs-comment">//                        rs.getString(3));</span><br>                <span class="hljs-comment">// 建议用列名获取，更加健壮（若查询使用别名，则需要同步使用）</span><br>                System.out.println(rs.getString(<span class="hljs-string">&quot;empno&quot;</span>) + <span class="hljs-string">&quot;, &quot;</span> +<br>                        rs.getString(<span class="hljs-string">&quot;ename&quot;</span>) + <span class="hljs-string">&quot;, &quot;</span> +<br>                        rs.getString(<span class="hljs-string">&quot;sal&quot;</span>));<br>            &#125;<br><br>        &#125; <span class="hljs-keyword">catch</span> (ClassNotFoundException e) &#123;<br>            e.printStackTrace();<br>        &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>            e.printStackTrace();<br>        &#125; <span class="hljs-keyword">finally</span> &#123;<br>            <span class="hljs-comment">// 6. 释放资源</span><br>            <span class="hljs-keyword">if</span> (rs != <span class="hljs-literal">null</span>) &#123;<br>                <span class="hljs-keyword">try</span> &#123;<br>                    rs.close();<br>                &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>                    e.printStackTrace();<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (stmt != <span class="hljs-literal">null</span>) &#123;<br>                <span class="hljs-keyword">try</span> &#123;<br>                    stmt.close();<br>                &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>                    e.printStackTrace();<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (conn != <span class="hljs-literal">null</span>) &#123;<br>                <span class="hljs-keyword">try</span> &#123;<br>                    conn.close();<br>                &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>                    e.printStackTrace();<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><img src="/images/image-jdbc/note-02-%E9%81%8D%E5%8E%86%E7%BB%93%E6%9E%9C%E9%9B%86%E5%8E%9F%E7%90%86.PNG" srcset="/img/loading.gif" lazyload alt="遍历结果集原理"></p>
+<p><img src="/java/images/image-jdbc/note-02-%E9%81%8D%E5%8E%86%E7%BB%93%E6%9E%9C%E9%9B%86%E5%8E%9F%E7%90%86.PNG" srcset="/java/img/loading.gif" lazyload alt="遍历结果集原理"></p>
 <h2 id="Use-IDEA"><a href="#Use-IDEA" class="headerlink" title="Use IDEA"></a>Use IDEA</h2><p><code>Module 右键 -&gt; Open Module Settings -&gt; Project Setting -&gt; Libraries -&gt; + -&gt; Java -&gt; [path]/mysql-connector-java-5.1.23.jar -&gt; choose Module</code></p>
 <h2 id="Power-Designer"><a href="#Power-Designer" class="headerlink" title="Power Designer"></a>Power Designer</h2><p>使用 PD 工具来进行数据库表的设计</p>
 <h2 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h2><p>模拟用户登录功能的实现</p>
@@ -411,7 +411,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/JDBC/" class="category-chain-item">JDBC</a>
+  <a href="/java/categories/JDBC/" class="category-chain-item">JDBC</a>
   
   
 
@@ -426,7 +426,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Note/">#Note</a>
+        <a href="/java/tags/Note/">#Note</a>
       
     </div>
   
@@ -439,7 +439,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>JDBC - Note</div>
-      <div>https://wataaaame.github.io/2022/07/18/JDBC - Note/</div>
+      <div>https://wataaaame.github.io/java/2022/07/18/JDBC - Note/</div>
     </div>
     <div class="license-meta">
       
@@ -481,7 +481,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/20/HTML%20-%20Note/" title="HTML - Note">
+                      <a href="/java/2022/07/20/HTML%20-%20Note/" title="HTML - Note">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">HTML - Note</span>
                         <span class="visible-mobile">Previous</span>
@@ -491,7 +491,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/14/MySQL%20-%20Note04%20Database/" title="MySQL - Note04 Database">
+                      <a href="/java/2022/07/14/MySQL%20-%20Note04%20Database/" title="MySQL - Note04 Database">
                         <span class="hidden-mobile">MySQL - Note04 Database</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -617,8 +617,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/java/js/events.js" ></script>
+<script  src="/java/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -642,7 +642,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/java/js/img-lazyload.js" ></script>
   
 
 
@@ -779,7 +779,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/java/js/local-search.js" ></script>
 
 
 
@@ -787,7 +787,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/java/js/boot.js" ></script>
 
 
   

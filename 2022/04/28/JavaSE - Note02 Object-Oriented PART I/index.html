@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/java/img/fluid.png">
+  <link rel="icon" href="/java/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,17 +19,17 @@
     <meta name="description" content="面向对象的概念（Object-Oriented）当我们采用面向对象的方式贯穿整个系统的话，涉及三个术语  OOA（Object-Oriented Analysis）：面向对象分析 OOD（Object-Oriented Design）：面向对象设计 OOP（Object-Oriented Programming）：面向对象编程  面向对象三大特征 封装（Encapsulation） 继承（Inhe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaSE - Note02 Object-Oriented PART I">
-<meta property="og:url" content="https://wataaaame.github.io/2022/04/28/JavaSE%20-%20Note02%20Object-Oriented%20PART%20I/index.html">
+<meta property="og:url" content="https://wataaaame.github.io/java/2022/04/28/JavaSE%20-%20Note02%20Object-Oriented%20PART%20I/index.html">
 <meta property="og:site_name" content="Wataame&#39;s Java Blog">
 <meta property="og:description" content="面向对象的概念（Object-Oriented）当我们采用面向对象的方式贯穿整个系统的话，涉及三个术语  OOA（Object-Oriented Analysis）：面向对象分析 OOD（Object-Oriented Design）：面向对象设计 OOP（Object-Oriented Programming）：面向对象编程  面向对象三大特征 封装（Encapsulation） 继承（Inhe">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wataaaame.github.io/images/image-java/note02-01-%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%BC%95%E7%94%A8%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="https://wataaaame.github.io/java/images/image-java/note02-01-%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%BC%95%E7%94%A8%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86.png">
 <meta property="article:published_time" content="2022-04-28T07:12:22.000Z">
-<meta property="article:modified_time" content="2022-07-18T03:04:29.559Z">
+<meta property="article:modified_time" content="2024-11-15T02:05:05.211Z">
 <meta property="article:author" content="Aaron Tang">
 <meta property="article:tag" content="Object-Oriented">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wataaaame.github.io/images/image-java/note02-01-%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%BC%95%E7%94%A8%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86.png">
+<meta name="twitter:image" content="https://wataaaame.github.io/java/images/image-java/note02-01-%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%BC%95%E7%94%A8%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86.png">
   
   
   
@@ -57,12 +57,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/java/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/java/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/java/css/highlight-dark.css" />
   
 
 
@@ -71,15 +71,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wataaaame.github.io","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"wataaaame.github.io","root":"/java/","version":"1.9.0","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/java/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/java/js/utils.js" ></script>
+  <script  src="/java/js/color-schema.js" ></script>
 
   
 <meta name="generator" content="Hexo 6.2.0"></head>
@@ -94,7 +94,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/java/">
       <strong>Wataame</strong>
     </a>
 
@@ -113,7 +113,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/java/">
                 <i class="iconfont icon-home-fill"></i>
                 Home
               </a>
@@ -125,7 +125,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/java/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 Archives
               </a>
@@ -137,7 +137,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/java/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 Categories
               </a>
@@ -149,7 +149,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/java/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 Tags
               </a>
@@ -161,7 +161,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/java/about/">
                 <i class="iconfont icon-user-fill"></i>
                 About
               </a>
@@ -190,7 +190,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/java/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -388,7 +388,7 @@
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// StudentTest.java</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">StudentTest</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Student</span> <span class="hljs-variable">s1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>();<br>        <span class="hljs-type">Student</span> <span class="hljs-variable">s2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Student</span>();<br>        <br>        s1.no = <span class="hljs-number">101</span>;<br>        s2.no = <span class="hljs-number">102</span>;<br>        <br>        System.out.println(s1.no, s2.no);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><img src="/images/image-java/note02-01-%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%BC%95%E7%94%A8%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86.png" srcset="/img/loading.gif" lazyload alt="对象和引用执行原理"></p>
+<p><img src="/java/images/image-java/note02-01-%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%BC%95%E7%94%A8%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86.png" srcset="/java/img/loading.gif" lazyload alt="对象和引用执行原理"></p>
 <h3 id="空指针异常"><a href="#空指针异常" class="headerlink" title="空指针异常"></a>空指针异常</h3><p>java.lang.NullPointerException</p>
 <p>“空引用”访问实例【对象相关】的相关数据时，都会出现空指针异常</p>
 <h1 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h1><p>写在类中，用来创建对象，同时给对象的属性赋值以开辟空间</p>
@@ -425,7 +425,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/JavaSE/" class="category-chain-item">JavaSE</a>
+  <a href="/java/categories/JavaSE/" class="category-chain-item">JavaSE</a>
   
   
 
@@ -440,7 +440,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Object-Oriented/">#Object-Oriented</a>
+        <a href="/java/tags/Object-Oriented/">#Object-Oriented</a>
       
     </div>
   
@@ -453,7 +453,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>JavaSE - Note02 Object-Oriented PART I</div>
-      <div>https://wataaaame.github.io/2022/04/28/JavaSE - Note02 Object-Oriented PART I/</div>
+      <div>https://wataaaame.github.io/java/2022/04/28/JavaSE - Note02 Object-Oriented PART I/</div>
     </div>
     <div class="license-meta">
       
@@ -495,7 +495,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/11/MySQL%20-%20Note03%20Storage%20Engine,%20Transaction,%20Index%20and%20View/" title="MySQL - Note03 Storage Engine, Transaction, Index and View">
+                      <a href="/java/2022/05/11/MySQL%20-%20Note03%20Storage%20Engine,%20Transaction,%20Index%20and%20View/" title="MySQL - Note03 Storage Engine, Transaction, Index and View">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">MySQL - Note03 Storage Engine, Transaction, Index and View</span>
                         <span class="visible-mobile">Previous</span>
@@ -505,7 +505,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/26/JavaSE%20-%20Java%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83%E6%96%B9%E6%B3%95/" title="JavaSE - Java 字符串比较方法">
+                      <a href="/java/2022/04/26/JavaSE%20-%20Java%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83%E6%96%B9%E6%B3%95/" title="JavaSE - Java 字符串比较方法">
                         <span class="hidden-mobile">JavaSE - Java 字符串比较方法</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -631,8 +631,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/java/js/events.js" ></script>
+<script  src="/java/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -656,7 +656,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/java/js/img-lazyload.js" ></script>
   
 
 
@@ -793,7 +793,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/java/js/local-search.js" ></script>
 
 
 
@@ -801,7 +801,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/java/js/boot.js" ></script>
 
 
   

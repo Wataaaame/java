@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/java/img/fluid.png">
+  <link rel="icon" href="/java/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,17 +19,17 @@
     <meta name="description" content="传统请求有：地址栏输入 URL、点击超链接、提交 form 表单、使用 JS 代码四种 页面全部刷新导致用户体验较差，浏览器处理完才能显示后面的页面，有空档期 AJAXAJAX（Asynchronous Java and XML）可以在浏览器中发送异步请求，请求之间不需要等待，不会出现整个页面清空后再展示新页面的效果，类似于多线程开发  并非一种技术，而是多种技术的综合产物 代码属于 WEB 前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaWeb - Note05 AJAX">
-<meta property="og:url" content="https://wataaaame.github.io/2022/08/13/JavaWeb%20-%20Note05%20AJAX/index.html">
+<meta property="og:url" content="https://wataaaame.github.io/java/2022/08/13/JavaWeb%20-%20Note05%20AJAX/index.html">
 <meta property="og:site_name" content="Wataame&#39;s Java Blog">
 <meta property="og:description" content="传统请求有：地址栏输入 URL、点击超链接、提交 form 表单、使用 JS 代码四种 页面全部刷新导致用户体验较差，浏览器处理完才能显示后面的页面，有空档期 AJAXAJAX（Asynchronous Java and XML）可以在浏览器中发送异步请求，请求之间不需要等待，不会出现整个页面清空后再展示新页面的效果，类似于多线程开发  并非一种技术，而是多种技术的综合产物 代码属于 WEB 前端">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wataaaame.github.io/images/image-javaweb/note05-01-AJAX%E5%8E%9F%E7%90%86.PNG">
+<meta property="og:image" content="https://wataaaame.github.io/java/images/image-javaweb/note05-01-AJAX%E5%8E%9F%E7%90%86.PNG">
 <meta property="article:published_time" content="2022-08-13T08:37:32.000Z">
-<meta property="article:modified_time" content="2022-08-18T12:58:05.266Z">
+<meta property="article:modified_time" content="2024-11-15T02:05:04.039Z">
 <meta property="article:author" content="Aaron Tang">
 <meta property="article:tag" content="AJAX">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wataaaame.github.io/images/image-javaweb/note05-01-AJAX%E5%8E%9F%E7%90%86.PNG">
+<meta name="twitter:image" content="https://wataaaame.github.io/java/images/image-javaweb/note05-01-AJAX%E5%8E%9F%E7%90%86.PNG">
   
   
   
@@ -57,12 +57,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/java/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/java/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/java/css/highlight-dark.css" />
   
 
 
@@ -71,15 +71,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wataaaame.github.io","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"wataaaame.github.io","root":"/java/","version":"1.9.0","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/java/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/java/js/utils.js" ></script>
+  <script  src="/java/js/color-schema.js" ></script>
 
   
 <meta name="generator" content="Hexo 6.2.0"></head>
@@ -94,7 +94,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/java/">
       <strong>Wataame</strong>
     </a>
 
@@ -113,7 +113,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/java/">
                 <i class="iconfont icon-home-fill"></i>
                 Home
               </a>
@@ -125,7 +125,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/java/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 Archives
               </a>
@@ -137,7 +137,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/java/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 Categories
               </a>
@@ -149,7 +149,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/java/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 Tags
               </a>
@@ -161,7 +161,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/java/about/">
                 <i class="iconfont icon-user-fill"></i>
                 About
               </a>
@@ -190,7 +190,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/java/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -283,7 +283,7 @@
 <li>同一个网页中启动多个请求</li>
 </ul>
 <h2 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h2><p>该对象是 AJAX 的核心对象，发送请求以及接受服务器数据的返回，现代浏览器支持，且内置该对象</p>
-<p><img src="/images/image-javaweb/note05-01-AJAX%E5%8E%9F%E7%90%86.PNG" srcset="/img/loading.gif" lazyload alt="AJAX原理"></p>
+<p><img src="/java/images/image-javaweb/note05-01-AJAX%E5%8E%9F%E7%90%86.PNG" srcset="/java/img/loading.gif" lazyload alt="AJAX原理"></p>
 <p>创建对象：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">var</span> <span class="hljs-variable">xhr</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br></code></pre></td></tr></table></figure>
 
@@ -772,7 +772,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/JavaWeb/" class="category-chain-item">JavaWeb</a>
+  <a href="/java/categories/JavaWeb/" class="category-chain-item">JavaWeb</a>
   
   
 
@@ -787,7 +787,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/AJAX/">#AJAX</a>
+        <a href="/java/tags/AJAX/">#AJAX</a>
       
     </div>
   
@@ -800,7 +800,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>JavaWeb - Note05 AJAX</div>
-      <div>https://wataaaame.github.io/2022/08/13/JavaWeb - Note05 AJAX/</div>
+      <div>https://wataaaame.github.io/java/2022/08/13/JavaWeb - Note05 AJAX/</div>
     </div>
     <div class="license-meta">
       
@@ -842,7 +842,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/17/JavaWeb%20-%20Note06%20jQuery/" title="JavaWeb - Note06 jQuery">
+                      <a href="/java/2022/08/17/JavaWeb%20-%20Note06%20jQuery/" title="JavaWeb - Note06 jQuery">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">JavaWeb - Note06 jQuery</span>
                         <span class="visible-mobile">Previous</span>
@@ -852,7 +852,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/08/05/JavaWeb%20-%20Note04%20JSP,%20Session%20&amp;%20Cookie/" title="JavaWeb - Note04 JSP, Session &amp; Cookie">
+                      <a href="/java/2022/08/05/JavaWeb%20-%20Note04%20JSP,%20Session%20&amp;%20Cookie/" title="JavaWeb - Note04 JSP, Session &amp; Cookie">
                         <span class="hidden-mobile">JavaWeb - Note04 JSP, Session &amp; Cookie</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -978,8 +978,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/java/js/events.js" ></script>
+<script  src="/java/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -1003,7 +1003,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/java/js/img-lazyload.js" ></script>
   
 
 
@@ -1140,7 +1140,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/java/js/local-search.js" ></script>
 
 
 
@@ -1148,7 +1148,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/java/js/boot.js" ></script>
 
 
   

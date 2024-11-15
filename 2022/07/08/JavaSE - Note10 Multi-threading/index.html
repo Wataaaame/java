@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/java/img/fluid.png">
+  <link rel="icon" href="/java/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,19 +19,19 @@
     <meta name="description" content="Multi-threading 多线程进程？线程？进程：是一个应用程序 线程：是一个进程中的执行场景&#x2F;单元  一个进程可以启动多个线程  Java 语言中的资源共享： 进程之间内存独立不共享 线程之间：堆内存和方法区内存共享，但是栈内存独立，一个线程一个栈    对于一个 Java 程序来说，当在 DOS 命令窗口输入：java HelloWorld，执行后： 会启动 JVM，而 JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaSE - Note10 Multi-threading">
-<meta property="og:url" content="https://wataaaame.github.io/2022/07/08/JavaSE%20-%20Note10%20Multi-threading/index.html">
+<meta property="og:url" content="https://wataaaame.github.io/java/2022/07/08/JavaSE%20-%20Note10%20Multi-threading/index.html">
 <meta property="og:site_name" content="Wataame&#39;s Java Blog">
 <meta property="og:description" content="Multi-threading 多线程进程？线程？进程：是一个应用程序 线程：是一个进程中的执行场景&#x2F;单元  一个进程可以启动多个线程  Java 语言中的资源共享： 进程之间内存独立不共享 线程之间：堆内存和方法区内存共享，但是栈内存独立，一个线程一个栈    对于一个 Java 程序来说，当在 DOS 命令窗口输入：java HelloWorld，执行后： 会启动 JVM，而 JVM">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wataaaame.github.io/images/image-java/note10-01-%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png">
-<meta property="og:image" content="https://wataaaame.github.io/images/image-java/note10-02-Lockpool.PNG">
-<meta property="og:image" content="https://wataaaame.github.io/images/image-java/note10-03-%E7%94%9F%E4%BA%A7%E8%80%85%E4%B8%8E%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F.png">
+<meta property="og:image" content="https://wataaaame.github.io/java/images/image-java/note10-01-%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png">
+<meta property="og:image" content="https://wataaaame.github.io/java/images/image-java/note10-02-Lockpool.PNG">
+<meta property="og:image" content="https://wataaaame.github.io/java/images/image-java/note10-03-%E7%94%9F%E4%BA%A7%E8%80%85%E4%B8%8E%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F.png">
 <meta property="article:published_time" content="2022-07-08T08:22:56.000Z">
-<meta property="article:modified_time" content="2022-07-18T03:01:37.266Z">
+<meta property="article:modified_time" content="2024-11-15T02:05:04.602Z">
 <meta property="article:author" content="Aaron Tang">
 <meta property="article:tag" content="Multi-threading">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wataaaame.github.io/images/image-java/note10-01-%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png">
+<meta name="twitter:image" content="https://wataaaame.github.io/java/images/image-java/note10-01-%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png">
   
   
   
@@ -59,12 +59,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/java/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/java/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/java/css/highlight-dark.css" />
   
 
 
@@ -73,15 +73,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wataaaame.github.io","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"wataaaame.github.io","root":"/java/","version":"1.9.0","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/java/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/java/js/utils.js" ></script>
+  <script  src="/java/js/color-schema.js" ></script>
 
   
 <meta name="generator" content="Hexo 6.2.0"></head>
@@ -96,7 +96,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/java/">
       <strong>Wataame</strong>
     </a>
 
@@ -115,7 +115,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/java/">
                 <i class="iconfont icon-home-fill"></i>
                 Home
               </a>
@@ -127,7 +127,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/java/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 Archives
               </a>
@@ -139,7 +139,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/java/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 Categories
               </a>
@@ -151,7 +151,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/java/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 Tags
               </a>
@@ -163,7 +163,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/java/about/">
                 <i class="iconfont icon-user-fill"></i>
                 About
               </a>
@@ -192,7 +192,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/java/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -314,7 +314,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> io.github.wataaaame.javase.thread;<br><br><span class="hljs-keyword">import</span> java.util.concurrent.Callable;<br><span class="hljs-keyword">import</span> java.util.concurrent.ExecutionException;<br><span class="hljs-keyword">import</span> java.util.concurrent.FutureTask;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">FutureTaskTest01</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> ExecutionException, InterruptedException &#123;<br>        <span class="hljs-comment">// 第一步，创建一个“未来任务类”对象</span><br>        <span class="hljs-comment">// 参数非常重要，需要给一个 Callable 接口实现对象</span><br>        <span class="hljs-type">FutureTask</span> <span class="hljs-variable">ft</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">FutureTask</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Callable</span>() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-comment">// call 相当于 run 方法，多了一个返回值</span><br>            <span class="hljs-keyword">public</span> Object <span class="hljs-title function_">call</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>                <span class="hljs-comment">// 线程执行一个任务，执行后可能返回一个结果</span><br>                System.out.println(<span class="hljs-string">&quot;call begin&quot;</span>);<br>                Thread.sleep(<span class="hljs-number">1000</span> * <span class="hljs-number">10</span>);<br>                System.out.println(<span class="hljs-string">&quot;call over&quot;</span>);<br><br>                <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">100</span>;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> <span class="hljs-number">200</span>;<br>                <span class="hljs-comment">// 自动装箱变成300</span><br>                <span class="hljs-keyword">return</span> a + b;<br>            &#125;<br>        &#125;);<br><br>        <span class="hljs-comment">// 创建线程对象</span><br>        <span class="hljs-type">Thread</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(ft);<br><br>        <span class="hljs-comment">// 启动线程</span><br>        t.start();<br><br>        <span class="hljs-comment">// 通过 get 拿到 FutureTask 的返回结果</span><br>        <span class="hljs-comment">// main 方法会受阻，必须等到 t 线程执行完毕才能得到返回结果</span><br>        System.out.println(ft.get());<br><br>        System.out.println(<span class="hljs-string">&quot;After crowd&quot;</span>);<br>    &#125;<br>&#125;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">    call begin</span><br><span class="hljs-comment">    call over</span><br><span class="hljs-comment">    300</span><br><span class="hljs-comment">    After crowd</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="线程生命周期"><a href="#线程生命周期" class="headerlink" title="线程生命周期"></a>线程生命周期</h2><p>新建状态、就绪状态、运行状态、阻塞状态（锁池）、死亡状态</p>
-<p><img src="/images/image-java/note10-01-%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" srcset="/img/loading.gif" lazyload alt="线程生命周期"></p>
+<p><img src="/java/images/image-java/note10-01-%E7%BA%BF%E7%A8%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" srcset="/java/img/loading.gif" lazyload alt="线程生命周期"></p>
 <h2 id="线程常用方法"><a href="#线程常用方法" class="headerlink" title="线程常用方法"></a>线程常用方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Thread</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>();<br></code></pre></td></tr></table></figure>
 
 <ol>
@@ -396,7 +396,7 @@
 <li><p>synchronized 用在实例方法上一定锁的是 this（不灵活；扩大了同步范围）</p>
 </li>
 <li><p>执行原理是：当线程遇到 <code>synchronized</code>，会自动查找并占有小括号中的“对象锁”，直到代码块执行完毕后才释放该锁，以便其他线程继续占用</p>
-<p><img src="/images/image-java/note10-02-Lockpool.PNG" srcset="/img/loading.gif" lazyload alt="Lockpool"></p>
+<p><img src="/java/images/image-java/note10-02-Lockpool.PNG" srcset="/java/img/loading.gif" lazyload alt="Lockpool"></p>
 </li>
 <li><p><strong>局部变量&#x2F;常量</strong>永远不会存在线程安全问题，一个线程一个栈，局部变量不共享；局部变量字符串拼接，建议使用 StringBuilder（StringBuffer 线程安全，效率较低）</p>
 </li>
@@ -473,7 +473,7 @@
 </li>
 </ol>
 <h3 id="生产者和消费者模式-1"><a href="#生产者和消费者模式-1" class="headerlink" title="生产者和消费者模式"></a>生产者和消费者模式</h3><p>生产线程负责生产，消费线程负责消费，二者需达到均衡</p>
-<p><img src="/images/image-java/note10-03-%E7%94%9F%E4%BA%A7%E8%80%85%E4%B8%8E%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F.png" srcset="/img/loading.gif" lazyload alt="生产者与消费者模式"></p>
+<p><img src="/java/images/image-java/note10-03-%E7%94%9F%E4%BA%A7%E8%80%85%E4%B8%8E%E6%B6%88%E8%B4%B9%E8%80%85%E6%A8%A1%E5%BC%8F.png" srcset="/java/img/loading.gif" lazyload alt="生产者与消费者模式"></p>
 <p>使用 wait() &amp; notify() 实现生产者消费者模式：</p>
 <ul>
 <li>二者的使用建立在线程同步的基础之上，因为多线程需要同时操作一个仓库，有线程安全问题</li>
@@ -518,7 +518,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/JavaSE/" class="category-chain-item">JavaSE</a>
+  <a href="/java/categories/JavaSE/" class="category-chain-item">JavaSE</a>
   
   
 
@@ -533,7 +533,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Multi-threading/">#Multi-threading</a>
+        <a href="/java/tags/Multi-threading/">#Multi-threading</a>
       
     </div>
   
@@ -546,7 +546,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>JavaSE - Note10 Multi-threading</div>
-      <div>https://wataaaame.github.io/2022/07/08/JavaSE - Note10 Multi-threading/</div>
+      <div>https://wataaaame.github.io/java/2022/07/08/JavaSE - Note10 Multi-threading/</div>
     </div>
     <div class="license-meta">
       
@@ -588,7 +588,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/11/JavaSE%20-%20Note11%20Reflect%20&amp;%20Path/" title="JavaSE - Note11 Reflect &amp; Path">
+                      <a href="/java/2022/07/11/JavaSE%20-%20Note11%20Reflect%20&amp;%20Path/" title="JavaSE - Note11 Reflect &amp; Path">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">JavaSE - Note11 Reflect &amp; Path</span>
                         <span class="visible-mobile">Previous</span>
@@ -598,7 +598,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/06/JavaSE%20-%20Note09%20IO%20Stream,%20File,%20IO%20&amp;%20Properties/" title="JavaSE - Note09 IO Stream, File, IO &amp; Properties">
+                      <a href="/java/2022/07/06/JavaSE%20-%20Note09%20IO%20Stream,%20File,%20IO%20&amp;%20Properties/" title="JavaSE - Note09 IO Stream, File, IO &amp; Properties">
                         <span class="hidden-mobile">JavaSE - Note09 IO Stream, File, IO &amp; Properties</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -724,8 +724,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/java/js/events.js" ></script>
+<script  src="/java/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -749,7 +749,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/java/js/img-lazyload.js" ></script>
   
 
 
@@ -886,7 +886,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/java/js/local-search.js" ></script>
 
 
 
@@ -894,7 +894,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/java/js/boot.js" ></script>
 
 
   

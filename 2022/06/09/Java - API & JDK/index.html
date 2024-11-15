@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/java/img/fluid.png">
+  <link rel="icon" href="/java/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,18 +19,18 @@
     <meta name="description" content="什么是 APIApplication Program Interface 应用程序编程接口 整个 JKD 类库就是一个 JavaSE 的 API 每一个 API 都会配置一套 API 帮助文档 获取途径 源代码中（API，比较麻烦，也比较难） 查阅 Java 类库帮助文档  Object - JDK 类库的根类Object 类中方法所有子类通用，任何一个类默认继承 Object 类 String">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java - API &amp; JDK">
-<meta property="og:url" content="https://wataaaame.github.io/2022/06/09/Java%20-%20API%20&%20JDK/index.html">
+<meta property="og:url" content="https://wataaaame.github.io/java/2022/06/09/Java%20-%20API%20&%20JDK/index.html">
 <meta property="og:site_name" content="Wataame&#39;s Java Blog">
 <meta property="og:description" content="什么是 APIApplication Program Interface 应用程序编程接口 整个 JKD 类库就是一个 JavaSE 的 API 每一个 API 都会配置一套 API 帮助文档 获取途径 源代码中（API，比较麻烦，也比较难） 查阅 Java 类库帮助文档  Object - JDK 类库的根类Object 类中方法所有子类通用，任何一个类默认继承 Object 类 String">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wataaaame.github.io/images/image-java/API&JDK-01-String%E3%80%81Integer%E3%80%81Int%E3%80%81%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2.png">
+<meta property="og:image" content="https://wataaaame.github.io/java/images/image-java/API&JDK-01-String%E3%80%81Integer%E3%80%81Int%E3%80%81%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2.png">
 <meta property="article:published_time" content="2022-06-09T01:09:14.000Z">
-<meta property="article:modified_time" content="2022-07-18T03:05:58.429Z">
+<meta property="article:modified_time" content="2024-11-15T02:05:06.058Z">
 <meta property="article:author" content="Aaron Tang">
 <meta property="article:tag" content="Java API">
 <meta property="article:tag" content="JDK">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wataaaame.github.io/images/image-java/API&JDK-01-String%E3%80%81Integer%E3%80%81Int%E3%80%81%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2.png">
+<meta name="twitter:image" content="https://wataaaame.github.io/java/images/image-java/API&JDK-01-String%E3%80%81Integer%E3%80%81Int%E3%80%81%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2.png">
   
   
   
@@ -58,12 +58,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/java/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/java/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/java/css/highlight-dark.css" />
   
 
 
@@ -72,15 +72,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wataaaame.github.io","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"wataaaame.github.io","root":"/java/","version":"1.9.0","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/java/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/java/js/utils.js" ></script>
+  <script  src="/java/js/color-schema.js" ></script>
 
   
 <meta name="generator" content="Hexo 6.2.0"></head>
@@ -95,7 +95,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/java/">
       <strong>Wataame</strong>
     </a>
 
@@ -114,7 +114,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/java/">
                 <i class="iconfont icon-home-fill"></i>
                 Home
               </a>
@@ -126,7 +126,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/java/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 Archives
               </a>
@@ -138,7 +138,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/java/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 Categories
               </a>
@@ -150,7 +150,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/java/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 Tags
               </a>
@@ -162,7 +162,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/java/about/">
                 <i class="iconfont icon-user-fill"></i>
                 About
               </a>
@@ -191,7 +191,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/java/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -599,7 +599,7 @@
 <p>将 int&#x2F;String 数字转换成 Integer</p>
 </li>
 </ol>
-<p><img src="/images/image-java/API&JDK-01-String%E3%80%81Integer%E3%80%81Int%E3%80%81%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2.png" srcset="/img/loading.gif" lazyload alt="String Integer Int 三种类型互相转换"></p>
+<p><img src="/java/images/image-java/API&JDK-01-String%E3%80%81Integer%E3%80%81Int%E3%80%81%E4%B8%89%E7%A7%8D%E7%B1%BB%E5%9E%8B%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2.png" srcset="/java/img/loading.gif" lazyload alt="String Integer Int 三种类型互相转换"></p>
 <h1 id="日期相关类"><a href="#日期相关类" class="headerlink" title="日期相关类"></a>日期相关类</h1><p><code>java.util.Date</code></p>
 <ol>
 <li><p>Date()</p>
@@ -772,7 +772,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  <a href="/java/categories/Java/" class="category-chain-item">Java</a>
   
   
 
@@ -787,9 +787,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Java-API/">#Java API</a>
+        <a href="/java/tags/Java-API/">#Java API</a>
       
-        <a href="/tags/JDK/">#JDK</a>
+        <a href="/java/tags/JDK/">#JDK</a>
       
     </div>
   
@@ -802,7 +802,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Java - API &amp; JDK</div>
-      <div>https://wataaaame.github.io/2022/06/09/Java - API &amp; JDK/</div>
+      <div>https://wataaaame.github.io/java/2022/06/09/Java - API &amp; JDK/</div>
     </div>
     <div class="license-meta">
       
@@ -844,7 +844,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/10/JavaSE%20-%20Note06%20Array%20&amp;%20Algorithm/" title="JavaSE - Note06 Array &amp; Algorithm">
+                      <a href="/java/2022/06/10/JavaSE%20-%20Note06%20Array%20&amp;%20Algorithm/" title="JavaSE - Note06 Array &amp; Algorithm">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">JavaSE - Note06 Array &amp; Algorithm</span>
                         <span class="visible-mobile">Previous</span>
@@ -854,7 +854,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/06/JavaSE%20-%20Note05%20Object-Oriented%20PART%20II/" title="JavaSE - Note05 Object-Oriented PART II">
+                      <a href="/java/2022/06/06/JavaSE%20-%20Note05%20Object-Oriented%20PART%20II/" title="JavaSE - Note05 Object-Oriented PART II">
                         <span class="hidden-mobile">JavaSE - Note05 Object-Oriented PART II</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -980,8 +980,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/java/js/events.js" ></script>
+<script  src="/java/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -1005,7 +1005,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/java/js/img-lazyload.js" ></script>
   
 
 
@@ -1142,7 +1142,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/java/js/local-search.js" ></script>
 
 
 
@@ -1150,7 +1150,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/java/js/boot.js" ></script>
 
 
   

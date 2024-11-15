@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/java/img/fluid.png">
+  <link rel="icon" href="/java/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,19 +19,19 @@
     <meta name="description" content="SpringMVC基于 MVC 开发模式的框架，用来优化控制器，是 Spring 家族的一员，也具备 IOC 与 AOP 特点：  轻量级，基于 MVN 框架 易于上手、容易理解、功能强大 具备 IOC 与 AOP 完全基于注解开发   MVC一种开发模式，是模型视图控制器的简称，所有的 web 应用都是基于 MVC 开发  M：模型层，包含实体类、业务逻辑层、数据访问层 V：视图层，如 html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSM - Note04 SpringMVC">
-<meta property="og:url" content="https://wataaaame.github.io/2022/09/01/SSM%20-%20Note04%20SpringMVC/index.html">
+<meta property="og:url" content="https://wataaaame.github.io/java/2022/09/01/SSM%20-%20Note04%20SpringMVC/index.html">
 <meta property="og:site_name" content="Wataame&#39;s Java Blog">
 <meta property="og:description" content="SpringMVC基于 MVC 开发模式的框架，用来优化控制器，是 Spring 家族的一员，也具备 IOC 与 AOP 特点：  轻量级，基于 MVN 框架 易于上手、容易理解、功能强大 具备 IOC 与 AOP 完全基于注解开发   MVC一种开发模式，是模型视图控制器的简称，所有的 web 应用都是基于 MVC 开发  M：模型层，包含实体类、业务逻辑层、数据访问层 V：视图层，如 html">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wataaaame.github.io/images/image-ssm/note04-01-SpringMVC%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.PNG">
-<meta property="og:image" content="https://wataaaame.github.io/images/image-ssm/note04-02-SSM%E6%A1%86%E6%9E%B6%E4%BC%98%E5%8C%96%E6%96%B9%E5%90%91.PNG">
-<meta property="og:image" content="https://wataaaame.github.io/images/image-ssm/note04-03-SpringMVC%E4%BC%98%E5%8C%96%E5%86%85%E5%AE%B9.PNG">
+<meta property="og:image" content="https://wataaaame.github.io/java/images/image-ssm/note04-01-SpringMVC%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.PNG">
+<meta property="og:image" content="https://wataaaame.github.io/java/images/image-ssm/note04-02-SSM%E6%A1%86%E6%9E%B6%E4%BC%98%E5%8C%96%E6%96%B9%E5%90%91.PNG">
+<meta property="og:image" content="https://wataaaame.github.io/java/images/image-ssm/note04-03-SpringMVC%E4%BC%98%E5%8C%96%E5%86%85%E5%AE%B9.PNG">
 <meta property="article:published_time" content="2022-09-01T01:45:08.000Z">
-<meta property="article:modified_time" content="2022-09-09T10:19:46.158Z">
+<meta property="article:modified_time" content="2024-11-15T02:05:02.755Z">
 <meta property="article:author" content="Aaron Tang">
 <meta property="article:tag" content="SpringMVC">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wataaaame.github.io/images/image-ssm/note04-01-SpringMVC%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.PNG">
+<meta name="twitter:image" content="https://wataaaame.github.io/java/images/image-ssm/note04-01-SpringMVC%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.PNG">
   
   
   
@@ -59,12 +59,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/java/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/java/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/java/css/highlight-dark.css" />
   
 
 
@@ -73,15 +73,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wataaaame.github.io","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"wataaaame.github.io","root":"/java/","version":"1.9.0","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/java/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/java/js/utils.js" ></script>
+  <script  src="/java/js/color-schema.js" ></script>
 
   
 <meta name="generator" content="Hexo 6.2.0"></head>
@@ -96,7 +96,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/java/">
       <strong>Wataame</strong>
     </a>
 
@@ -115,7 +115,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/java/">
                 <i class="iconfont icon-home-fill"></i>
                 Home
               </a>
@@ -127,7 +127,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/java/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 Archives
               </a>
@@ -139,7 +139,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/java/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 Categories
               </a>
@@ -151,7 +151,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/java/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 Tags
               </a>
@@ -163,7 +163,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/java/about/">
                 <i class="iconfont icon-user-fill"></i>
                 About
               </a>
@@ -192,7 +192,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/java/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -282,14 +282,14 @@
 <li>具备 IOC 与 AOP</li>
 <li>完全基于注解开发</li>
 </ol>
-<p><img src="/images/image-ssm/note04-01-SpringMVC%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.PNG" srcset="/img/loading.gif" lazyload alt="SpringMVC执行流程"></p>
+<p><img src="/java/images/image-ssm/note04-01-SpringMVC%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.PNG" srcset="/java/img/loading.gif" lazyload alt="SpringMVC执行流程"></p>
 <h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>一种开发模式，是模型视图控制器的简称，所有的 web 应用都是基于 MVC 开发</p>
 <ul>
 <li>M：模型层，包含实体类、业务逻辑层、数据访问层</li>
 <li>V：视图层，如 html、javascript、vue 等，用来显现数据</li>
 <li>C：控制器，用来接收客户端请求，返回响应到客户端的组件，如 Servlet</li>
 </ul>
-<p><img src="/images/image-ssm/note04-02-SSM%E6%A1%86%E6%9E%B6%E4%BC%98%E5%8C%96%E6%96%B9%E5%90%91.PNG" srcset="/img/loading.gif" lazyload alt="SSM框架优化方向"></p>
+<p><img src="/java/images/image-ssm/note04-02-SSM%E6%A1%86%E6%9E%B6%E4%BC%98%E5%8C%96%E6%96%B9%E5%90%91.PNG" srcset="/java/img/loading.gif" lazyload alt="SSM框架优化方向"></p>
 <h1 id="注解式开发"><a href="#注解式开发" class="headerlink" title="注解式开发"></a>注解式开发</h1><ol>
 <li><p>新建项目，选择 webapp 模板</p>
 </li>
@@ -334,7 +334,7 @@
 <li><p>区分 GET 请求和 POST 请求</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> github.wataaaame.controller;<br><br><span class="hljs-keyword">import</span> org.springframework.stereotype.Controller;<br><span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;<br><span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;<br><br><span class="hljs-meta">@Controller</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ReqAction</span> &#123;<br>    <span class="hljs-meta">@RequestMapping(value = &quot;/req&quot;, method = RequestMethod.GET)</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">req</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;I&#x27;m do for GET&quot;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;main&quot;</span>;<br>    &#125;<br>    <span class="hljs-meta">@RequestMapping(value = &quot;/req&quot;, method = RequestMethod.POST)</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">reqp</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;I&#x27;m do for POST&quot;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;main&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="五种数据提交方式"><a href="#五种数据提交方式" class="headerlink" title="五种数据提交方式"></a>五种数据提交方式</h2><p><img src="/images/image-ssm/note04-03-SpringMVC%E4%BC%98%E5%8C%96%E5%86%85%E5%AE%B9.PNG" srcset="/img/loading.gif" lazyload alt="SpringMVC优化内容"></p>
+<h2 id="五种数据提交方式"><a href="#五种数据提交方式" class="headerlink" title="五种数据提交方式"></a>五种数据提交方式</h2><p><img src="/java/images/image-ssm/note04-03-SpringMVC%E4%BC%98%E5%8C%96%E5%86%85%E5%AE%B9.PNG" srcset="/java/img/loading.gif" lazyload alt="SpringMVC优化内容"></p>
 <ol>
 <li><p>散提交数据</p>
 <p>只需形参类型与形参名同提交的一致即可</p>
@@ -609,7 +609,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/SSM/" class="category-chain-item">SSM</a>
+  <a href="/java/categories/SSM/" class="category-chain-item">SSM</a>
   
   
 
@@ -624,7 +624,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/SpringMVC/">#SpringMVC</a>
+        <a href="/java/tags/SpringMVC/">#SpringMVC</a>
       
     </div>
   
@@ -637,7 +637,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>SSM - Note04 SpringMVC</div>
-      <div>https://wataaaame.github.io/2022/09/01/SSM - Note04 SpringMVC/</div>
+      <div>https://wataaaame.github.io/java/2022/09/01/SSM - Note04 SpringMVC/</div>
     </div>
     <div class="license-meta">
       
@@ -679,9 +679,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/04/Project%20-%20Configuration%20and%20Appendix/" title="Project - Configuration and Appendix">
+                      <a href="/java/2022/09/06/Project%20-%20CRM%20%E5%AE%A2%E6%88%B7%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" title="Project - CRM 客户关系管理系统">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Project - Configuration and Appendix</span>
+                        <span class="hidden-mobile">Project - CRM 客户关系管理系统</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -689,7 +689,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/08/25/SSM%20-%20Note03%20Spring/" title="SSM - Note03 Spring">
+                      <a href="/java/2022/08/25/SSM%20-%20Note03%20Spring/" title="SSM - Note03 Spring">
                         <span class="hidden-mobile">SSM - Note03 Spring</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -815,8 +815,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/java/js/events.js" ></script>
+<script  src="/java/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -840,7 +840,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/java/js/img-lazyload.js" ></script>
   
 
 
@@ -977,7 +977,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/java/js/local-search.js" ></script>
 
 
 
@@ -985,7 +985,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/java/js/boot.js" ></script>
 
 
   

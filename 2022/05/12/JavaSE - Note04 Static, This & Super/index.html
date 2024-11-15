@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/java/img/fluid.png">
+  <link rel="icon" href="/java/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,21 +19,21 @@
     <meta name="description" content="Static（静态）static 修饰的变量：静态变量 static 修饰的方法：静态方法  所有 static 修饰的都是类相关的，类级别的  类加载时便初始化，无需 new 存储在方法区    静态变量不会出现空指针异常，因为静态变量不需要对象的存在（实际上运行中 引用. 会自动转换为 类名.  *引用规则实例一定要使用 引用. 来访问，静态建议使用 类名. 来访问  如果类中所有对象某个属性">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaSE - Note04 Static, This &amp; Super">
-<meta property="og:url" content="https://wataaaame.github.io/2022/05/12/JavaSE%20-%20Note04%20Static,%20This%20&%20Super/index.html">
+<meta property="og:url" content="https://wataaaame.github.io/java/2022/05/12/JavaSE%20-%20Note04%20Static,%20This%20&%20Super/index.html">
 <meta property="og:site_name" content="Wataame&#39;s Java Blog">
 <meta property="og:description" content="Static（静态）static 修饰的变量：静态变量 static 修饰的方法：静态方法  所有 static 修饰的都是类相关的，类级别的  类加载时便初始化，无需 new 存储在方法区    静态变量不会出现空指针异常，因为静态变量不需要对象的存在（实际上运行中 引用. 会自动转换为 类名.  *引用规则实例一定要使用 引用. 来访问，静态建议使用 类名. 来访问  如果类中所有对象某个属性">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://wataaaame.github.io/images/image-java/note04-01-static%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E5%86%85%E5%AD%98%E5%9B%BE.png">
-<meta property="og:image" content="https://wataaaame.github.io/images/image-java/note04-02-this%E5%85%B3%E9%94%AE%E5%AD%97.png">
-<meta property="og:image" content="https://wataaaame.github.io/images/image-java/note04-04-super%E7%9A%84%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="https://wataaaame.github.io/java/images/image-java/note04-01-static%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E5%86%85%E5%AD%98%E5%9B%BE.png">
+<meta property="og:image" content="https://wataaaame.github.io/java/images/image-java/note04-02-this%E5%85%B3%E9%94%AE%E5%AD%97.png">
+<meta property="og:image" content="https://wataaaame.github.io/java/images/image-java/note04-04-super%E7%9A%84%E5%8E%9F%E7%90%86.png">
 <meta property="article:published_time" content="2022-05-12T06:40:45.000Z">
-<meta property="article:modified_time" content="2022-07-18T03:04:13.959Z">
+<meta property="article:modified_time" content="2024-11-15T02:05:05.059Z">
 <meta property="article:author" content="Aaron Tang">
 <meta property="article:tag" content="Static">
 <meta property="article:tag" content="This">
 <meta property="article:tag" content="Super">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://wataaaame.github.io/images/image-java/note04-01-static%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E5%86%85%E5%AD%98%E5%9B%BE.png">
+<meta name="twitter:image" content="https://wataaaame.github.io/java/images/image-java/note04-01-static%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E5%86%85%E5%AD%98%E5%9B%BE.png">
   
   
   
@@ -61,12 +61,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/java/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/java/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/java/css/highlight-dark.css" />
   
 
 
@@ -75,15 +75,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"wataaaame.github.io","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"wataaaame.github.io","root":"/java/","version":"1.9.0","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/java/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/java/js/utils.js" ></script>
+  <script  src="/java/js/color-schema.js" ></script>
 
   
 <meta name="generator" content="Hexo 6.2.0"></head>
@@ -98,7 +98,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/java/">
       <strong>Wataame</strong>
     </a>
 
@@ -117,7 +117,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/java/">
                 <i class="iconfont icon-home-fill"></i>
                 Home
               </a>
@@ -129,7 +129,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/java/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 Archives
               </a>
@@ -141,7 +141,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/java/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 Categories
               </a>
@@ -153,7 +153,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/java/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 Tags
               </a>
@@ -165,7 +165,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/java/about/">
                 <i class="iconfont icon-user-fill"></i>
                 About
               </a>
@@ -194,7 +194,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/java/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -298,7 +298,7 @@
 </blockquote>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// TS01_Static.java</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TS01_Static</span> &#123;<br>	<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>		System.out.println(Chinese.contry);<br><br>		<span class="hljs-type">Chinese</span> <span class="hljs-variable">c1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Chinese</span>(<span class="hljs-string">&quot;101&quot;</span>, <span class="hljs-string">&quot;vv&quot;</span>);<br>		<span class="hljs-type">Chinese</span> <span class="hljs-variable">c2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Chinese</span>(<span class="hljs-string">&quot;102&quot;</span>, <span class="hljs-string">&quot;yy&quot;</span>);<br><br>		System.out.println(c1.idCard);<br>		System.out.println(c1.name);<br>		System.out.println(Chinese.contry);<br><br>		System.out.println(c2.idCard);<br>		System.out.println(c2.name);<br>		System.out.println(Chinese.contry);<br>	&#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Chinese</span> &#123;<br>	String idCard;<br>	String name;<br>	<span class="hljs-keyword">static</span> <span class="hljs-type">String</span> <span class="hljs-variable">contry</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;China&quot;</span>;<br><br>	<span class="hljs-keyword">public</span> <span class="hljs-title function_">Chinese</span><span class="hljs-params">()</span> &#123;&#125;<br>	<span class="hljs-keyword">public</span> <span class="hljs-title function_">Chinese</span><span class="hljs-params">(String i, String n)</span> &#123;<br>		idCard = i;<br>		name = n;<br>	&#125;<br>&#125;<br><br><span class="hljs-comment">// Computational Results:</span><br><span class="hljs-comment">/*</span><br><span class="hljs-comment">    China</span><br><span class="hljs-comment">    101</span><br><span class="hljs-comment">    vv</span><br><span class="hljs-comment">    China</span><br><span class="hljs-comment">    102</span><br><span class="hljs-comment">    yy</span><br><span class="hljs-comment">    China</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
 
-<p><img src="/images/image-java/note04-01-static%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E5%86%85%E5%AD%98%E5%9B%BE.png" srcset="/img/loading.gif" lazyload alt="static 静态变量内存图"></p>
+<p><img src="/java/images/image-java/note04-01-static%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E5%86%85%E5%AD%98%E5%9B%BE.png" srcset="/java/img/loading.gif" lazyload alt="static 静态变量内存图"></p>
 <table>
 <thead>
 <tr>
@@ -369,7 +369,7 @@
 <p>访问自身类中实例变量，<code>this.</code> 可省略（大部分）</p>
 <p>静态变量无法使用 this</p>
 </blockquote>
-<p><img src="/images/image-java/note04-02-this%E5%85%B3%E9%94%AE%E5%AD%97.png" srcset="/img/loading.gif" lazyload alt="this 内存图"></p>
+<p><img src="/java/images/image-java/note04-02-this%E5%85%B3%E9%94%AE%E5%AD%97.png" srcset="/java/img/loading.gif" lazyload alt="this 内存图"></p>
 <h2 id="this-何时不可省略？"><a href="#this-何时不可省略？" class="headerlink" title="this 何时不可省略？"></a>this 何时不可省略？</h2><p>在实例方法中，或者构造方法中，为了区分实例变量和局部变量，<code>this.</code> 不可省略</p>
 <p>根据就近原则，实例方法中局部变量命名重复：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setNo</span><span class="hljs-params">(<span class="hljs-type">int</span> no)</span> &#123;<br>    no = no;<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -389,7 +389,7 @@
 <p>模拟现实中：要想有儿子，需要先有父亲</p>
 <p>父类构造方法连续调用，实际上对象只创建了一个</p>
 </blockquote>
-<p><img src="/images/image-java/note04-04-super%E7%9A%84%E5%8E%9F%E7%90%86.png" srcset="/img/loading.gif" lazyload alt="super 的原理"></p>
+<p><img src="/java/images/image-java/note04-04-super%E7%9A%84%E5%8E%9F%E7%90%86.png" srcset="/java/img/loading.gif" lazyload alt="super 的原理"></p>
 <h2 id="Super-的使用"><a href="#Super-的使用" class="headerlink" title="Super 的使用"></a>Super 的使用</h2><p><code>super.属性名</code>				【访问父类的属性】</p>
 <p><code>super.方法名(实参)</code>	【访问父类的方法】</p>
 <p><code>super(实参)</code>				【调用父类的构造方法】</p>
@@ -452,7 +452,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/JavaSE/" class="category-chain-item">JavaSE</a>
+  <a href="/java/categories/JavaSE/" class="category-chain-item">JavaSE</a>
   
   
 
@@ -467,11 +467,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Static/">#Static</a>
+        <a href="/java/tags/Static/">#Static</a>
       
-        <a href="/tags/This/">#This</a>
+        <a href="/java/tags/This/">#This</a>
       
-        <a href="/tags/Super/">#Super</a>
+        <a href="/java/tags/Super/">#Super</a>
       
     </div>
   
@@ -484,7 +484,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>JavaSE - Note04 Static, This &amp; Super</div>
-      <div>https://wataaaame.github.io/2022/05/12/JavaSE - Note04 Static, This &amp; Super/</div>
+      <div>https://wataaaame.github.io/java/2022/05/12/JavaSE - Note04 Static, This &amp; Super/</div>
     </div>
     <div class="license-meta">
       
@@ -526,7 +526,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/26/JavaSE%20-%20Note00%20Mechanism/" title="JavaSE - Note00 Mechanism">
+                      <a href="/java/2022/05/26/JavaSE%20-%20Note00%20Mechanism/" title="JavaSE - Note00 Mechanism">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">JavaSE - Note00 Mechanism</span>
                         <span class="visible-mobile">Previous</span>
@@ -536,7 +536,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/12/JavaSE%20-%20Note03%20Characteristics%20of%20OO/" title="JavaSE - Note03 Characteristics of OO">
+                      <a href="/java/2022/05/12/JavaSE%20-%20Note03%20Characteristics%20of%20OO/" title="JavaSE - Note03 Characteristics of OO">
                         <span class="hidden-mobile">JavaSE - Note03 Characteristics of OO</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -662,8 +662,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/java/js/events.js" ></script>
+<script  src="/java/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -687,7 +687,7 @@
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/java/js/img-lazyload.js" ></script>
   
 
 
@@ -824,7 +824,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/java/js/local-search.js" ></script>
 
 
 
@@ -832,7 +832,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/java/js/boot.js" ></script>
 
 
   
